@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor">#212121</color>
-    <color name="primaryLightColor">#484848</color>
-    <color name="primaryDarkColor">#000000</color>
-    <color name="secondaryColor">#eeeeee</color>
-    <color name="secondaryLightColor">#ffffff</color>
-    <color name="secondaryDarkColor">#bcbcbc</color>
-    <color name="primaryTextColor">#ffffff</color>
-    <color name="secondaryTextColor">#000000</color>
+    <color name="primaryDark">#000000</color> <!--Color primary (dark)-->
+    <color name="primaryLight">#212121</color> <!--Color primary (light)-->
+    <color name="primaryDarkVariant">#191123</color> <!--Color primary variant (dark)-->
+    <color name="primaryLightVariant">#484848</color> <!--Color primary variant (light)-->
+
+    <color name="secondaryLight">#2962ff</color> <!--Color secondary-->
+    <color name="secondaryDark">#0039cb</color> <!--Color secondary variant-->
+
+    <color name="red_200">#cf6679</color> <!--Color error (dark)-->
+    <color name="red_600">#b00020</color> <!--Color error (light)-->
+
+    <!--Color surface (light), color on error (light), -->
+    <!--color on surface (dark), color on surface (dark)-->
+    <color name="white_50">#fafafa</color>
+
+    <color name="black_800">#121212</color> <!--Color surface (dark)-->
+    <!--Color on secondary (light), color on background (light),-->
+    <!--color on surface (light)-->
+    <color name="black_900">@color/primaryDark</color>
+
 </resources>
