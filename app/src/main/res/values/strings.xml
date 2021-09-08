@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Lorem Picsum</string>
+    
+    <string name="welcome_button_login">Log In</string>
+    <string name="welcome_button_register">Register</string>
 </resources>
