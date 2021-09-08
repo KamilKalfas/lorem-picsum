@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.button.MaterialButton
+        style="?materialButtonOutlinedStyle"
+        android:id="@+id/welcome_button_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_button_login"
+        app:layout_constraintTop_toBottomOf="@id/welcome_horizontal_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/welcome_button_register"
+        android:layout_marginEnd="@dimen/margin_9"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_20"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/welcome_button_register"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_button_register"
+        app:layout_constraintTop_toBottomOf="@id/welcome_horizontal_guideline"
+        app:layout_constraintStart_toEndOf="@id/welcome_button_login"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_20"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/welcome_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/welcome_horizontal_guideline"
+        android:scaleType="centerCrop"
+        android:src="@drawable/welcome_bg"
+        tools:srcCompat="@drawable/welcome_bg" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcome_horizontal_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+</androidx.constraintlayout.widget.ConstraintLayout>
