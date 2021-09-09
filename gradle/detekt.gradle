@@ -1,0 +1,17 @@
+apply plugin: 'io.gitlab.arturbosch.detekt'
+
+detekt {
+    toolVersion = "$detekt_version"
+    input = files("src/main/java")
+    config = files("${rootDir}/quality/config/detekt-config.yml")
+    reports {
+        xml {
+            enabled = true
+            destination = file("${rootDir}/quality/reports/deteck/detekt.xml")
+        }
+        html {
+            enabled = true
+            destination = file("${rootDir}/quality/reports/deteck/detekt.html")
+        }
+    }
+}
