@@ -31,6 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
+        android:contentDescription="@null"
         android:id="@+id/welcome_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"

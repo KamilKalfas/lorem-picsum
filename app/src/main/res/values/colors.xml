@@ -15,7 +15,6 @@
     <!--color on surface (dark), color on surface (dark)-->
     <color name="white_50">#fafafa</color>
 
-    <color name="black_800">#121212</color> <!--Color surface (dark)-->
     <!--Color on secondary (light), color on background (light),-->
     <!--color on surface (light)-->
     <color name="black_900">@color/primaryDark</color>
