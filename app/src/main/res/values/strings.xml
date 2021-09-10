@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">Lorem Picsum</string>
-    
+
+    <!-- welcome_fragment start-->
     <string name="welcome_button_login">Log In</string>
     <string name="welcome_button_register">Register</string>
+    <!-- welcome_fragment end-->
+
+    <!-- signup_fragment start-->
+    <string name="signup_title">@string/welcome_button_register</string>
+    <string name="signup_hint_email">Email Address</string>
+    <string name="signup_hint_password">Password</string>
+    <string name="signup_hint_username">Username</string>
+    <string name="signup_button_label">Sign Up</string>
+    <string name="signup_tnc_label">By signing up, you agree to Photo\’s Terms of Service and Privacy Policy.</string>
+    <!-- signup_fragment end-->
 </resources>

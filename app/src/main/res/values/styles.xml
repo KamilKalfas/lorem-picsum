@@ -18,8 +18,9 @@
     </style>
 
     <style name="Widget.LoremPicsum.MaterialComponents.Button" parent="Widget.MaterialComponents.Button">
-        <item name="maxHeight">52dp</item>
-        <item name="height">52dp</item>
+        <item name="android:maxHeight">52dp</item>
+        <item name="android:maxButtonHeight">52dp</item>
+        <item name="android:height">52dp</item>
     </style>
 
 </resources>
