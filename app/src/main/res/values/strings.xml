@@ -14,4 +14,11 @@
     <string name="signup_button_label">Sign Up</string>
     <string name="signup_tnc_label">By signing up, you agree to Photo\’s Terms of Service and Privacy Policy.</string>
     <!-- signup_fragment end-->
+
+    <!-- login_fragment start-->
+    <string name="login_title">@string/welcome_button_login</string>
+    <string name="login_hint_email">@string/signup_hint_email</string>
+    <string name="login_hint_password">@string/signup_hint_password</string>
+    <string name="login_button_label">@string/welcome_button_login</string>
+    <!-- login_fragment end-->
 </resources>
