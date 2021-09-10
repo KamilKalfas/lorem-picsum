@@ -36,7 +36,7 @@
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.LoremPicsum.BottomSheetDialog</item>
         <item name="navigationViewStyle">@style/Widget.LoremPicsum.NavigationView</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.PrimarySurface</item>
-        <item name="buttonStyle">@style/Widget.LoremPicsum.MaterialComponents.Button</item>
+        <item name="materialButtonStyle">@style/Widget.LoremPicsum.MaterialComponents.Button</item>
     </style>
 
     <style name="Base.Theme.MaterialThemeBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
