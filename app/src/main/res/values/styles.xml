@@ -23,4 +23,12 @@
         <item name="android:height">52dp</item>
     </style>
 
+    <style name="circleImageView">
+        <item name="strokeColor">@android:color/transparent</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="background">@android:color/transparent</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>

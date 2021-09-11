@@ -2,7 +2,7 @@ package com.kkalfas.lorempicsum
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kkalfas.lorempicsum.welcome.WelcomeFragment
+import com.kkalfas.lorempicsum.discovery.ui.DiscoveryFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.main_activity)
         supportFragmentManager.beginTransaction()
-                .add(R.id.fragment_container, WelcomeFragment())
+                .add(R.id.fragment_container, DiscoveryFragment())
                 .commit()
     }
 }
