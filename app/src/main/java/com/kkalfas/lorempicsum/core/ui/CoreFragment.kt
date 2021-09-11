@@ -1,4 +1,4 @@
-package com.kkalfas.lorempicsum.core
+package com.kkalfas.lorempicsum.core.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

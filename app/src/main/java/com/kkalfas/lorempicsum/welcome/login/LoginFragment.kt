@@ -3,7 +3,7 @@ package com.kkalfas.lorempicsum.welcome.login
 import android.os.Bundle
 import android.view.View
 import com.kkalfas.lorempicsum.R
-import com.kkalfas.lorempicsum.core.CoreFragment
+import com.kkalfas.lorempicsum.core.ui.CoreFragment
 import com.kkalfas.lorempicsum.databinding.LoginFragmentBinding
 
 internal class LoginFragment : CoreFragment<LoginFragmentBinding>(R.layout.login_fragment) {
