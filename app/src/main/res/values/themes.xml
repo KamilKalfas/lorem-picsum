@@ -35,7 +35,7 @@
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert</item>
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.LoremPicsum.BottomSheetDialog</item>
         <item name="navigationViewStyle">@style/Widget.LoremPicsum.NavigationView</item>
-        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.PrimarySurface</item>
+        <item name="toolbarStyle">@style/Widget.LoremPicsum.MaterialComponents.Toolbar</item>
         <item name="materialButtonStyle">@style/Widget.LoremPicsum.MaterialComponents.Button</item>
     </style>
 
@@ -46,4 +46,5 @@
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
         <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorControlHighlight</item>
     </style>
+
 </resources>

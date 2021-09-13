@@ -3,7 +3,7 @@ package com.kkalfas.lorempicsum.welcome.signup
 import android.os.Bundle
 import android.view.View
 import com.kkalfas.lorempicsum.R
-import com.kkalfas.lorempicsum.core.CoreFragment
+import com.kkalfas.lorempicsum.core.ui.CoreFragment
 import com.kkalfas.lorempicsum.databinding.SignupFragmentBinding
 
 internal class SignUpFragment : CoreFragment<SignupFragmentBinding>(R.layout.signup_fragment) {

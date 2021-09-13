@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="photoDto"
+            type="com.kkalfas.lorempicsum.discover.data.PhotoItemDto" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp_0"
+        app:cardElevation="6dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_16">
+
+            <ImageView
+                android:id="@+id/whats_new_item_image"
+                android:layout_width="match_parent"
+                android:layout_height="343dp"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:loadPhoto="@{photoDto.photoUrl}"
+                tools:src="@drawable/welcome_bg" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/whats_new_item_author_avatar"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="@dimen/dp_16"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="@id/whats_new_item_image"
+                app:layout_constraintTop_toBottomOf="@id/whats_new_item_image"
+                app:loadAvatar="@{photoDto.profileImageUrl}"
+                app:shapeAppearanceOverlay="@style/circleImageView"
+                tools:src="@drawable/welcome_bg" />
+
+            <TextView
+                android:id="@+id/whats_new_item_author_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:text="@{photoDto.name}"
+                android:textAppearance="?textAppearanceOverline"
+                app:layout_constraintStart_toEndOf="@id/whats_new_item_author_avatar"
+                app:layout_constraintTop_toTopOf="@id/whats_new_item_author_avatar"
+                tools:text="Author Name" />
+
+            <TextView
+                android:id="@+id/whats_new_item_author_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:text="@{photoDto.profileName}"
+                android:textAppearance="?textAppearanceCaption"
+                app:layout_constraintBottom_toBottomOf="@id/whats_new_item_author_avatar"
+                app:layout_constraintStart_toEndOf="@id/whats_new_item_author_avatar"
+                tools:text="\@authorName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

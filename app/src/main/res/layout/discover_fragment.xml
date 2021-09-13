@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="androidx.recyclerview.widget.RecyclerView" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/discovery_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/prominent_toolbar_height">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:collapsedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Collapsed"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginBottom="@dimen/dp_16"
+                app:expandedTitleMarginStart="@dimen/dp_16"
+                app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/discovery_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:elevation="@dimen/dp_0"
+                    app:layout_collapseMode="pin"
+                    app:navigationContentDescription="@string/discover_title"
+                    app:title="@string/discover_title" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/discovery_whats_new_label"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:text="@string/discover_whats_new_label"
+                    android:textAllCaps="true"
+                    android:textAppearance="?textAppearanceHeadline6"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/discovery_whats_new_recycler"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/discovery_whats_new_label"
+                    app:scrollOrientation="@{RecyclerView.HORIZONTAL}"
+                    tools:listitem="@layout/discovery_whats_new_list_item"
+                    tools:orientation="horizontal" />
+
+                <TextView
+                    android:id="@+id/discovery_browse_all_label"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:text="@string/discover_browse_all_label"
+                    android:textAllCaps="true"
+                    android:textAppearance="?textAppearanceHeadline6"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/discovery_whats_new_recycler" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/discovery_browse_all_recycler"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/discovery_browse_all_label" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/start_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/dp_16" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/end_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/dp_16" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
