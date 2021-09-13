@@ -23,8 +23,8 @@
                 android:fitsSystemWindows="true"
                 app:collapsedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Collapsed"
                 app:contentScrim="?attr/colorPrimary"
-                app:expandedTitleMarginBottom="@dimen/margin_16"
-                app:expandedTitleMarginStart="@dimen/margin_16"
+                app:expandedTitleMarginBottom="@dimen/dp_16"
+                app:expandedTitleMarginStart="@dimen/dp_16"
                 app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
@@ -32,7 +32,7 @@
                     android:id="@+id/discovery_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
-                    android:elevation="@dimen/width_0"
+                    android:elevation="@dimen/dp_0"
                     app:layout_collapseMode="pin"
                     app:navigationContentDescription="@string/discovery_title"
                     app:title="@string/discovery_title" />
@@ -51,9 +51,9 @@
 
                 <TextView
                     android:id="@+id/discovery_whats_new_label"
-                    android:layout_width="@dimen/width_0"
+                    android:layout_width="@dimen/dp_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/dp_16"
                     android:text="@string/discovery_whats_new_label"
                     android:textAppearance="?textAppearanceHeadline5"
                     app:layout_constraintEnd_toEndOf="@id/end_guideline"
@@ -62,9 +62,9 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/discovery_whats_new_recycler"
-                    android:layout_width="@dimen/width_0"
+                    android:layout_width="@dimen/dp_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_24"
+                    android:layout_marginTop="@dimen/dp_24"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/discovery_whats_new_label"
@@ -74,9 +74,9 @@
 
                 <TextView
                     android:id="@+id/discovery_browse_all_label"
-                    android:layout_width="@dimen/width_0"
+                    android:layout_width="@dimen/dp_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/dp_16"
                     android:text="@string/discovery_whats_new_label"
                     android:textAppearance="?textAppearanceHeadline5"
                     app:layout_constraintEnd_toEndOf="@id/end_guideline"
@@ -85,9 +85,9 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/discovery_browse_all_recycler"
-                    android:layout_width="@dimen/width_0"
+                    android:layout_width="@dimen/dp_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_24"
+                    android:layout_marginTop="@dimen/dp_24"
                     app:layout_constraintBaseline_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/end_guideline"
                     app:layout_constraintStart_toStartOf="@id/start_guideline"
@@ -98,14 +98,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_begin="@dimen/margin_16" />
+                    app:layout_constraintGuide_begin="@dimen/dp_16" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/end_guideline"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_end="@dimen/margin_16" />
+                    app:layout_constraintGuide_end="@dimen/dp_16" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>

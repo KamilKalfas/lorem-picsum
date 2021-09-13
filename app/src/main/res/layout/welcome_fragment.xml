@@ -14,9 +14,9 @@
         app:layout_constraintTop_toBottomOf="@id/welcome_horizontal_guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/welcome_button_register"
-        android:layout_marginEnd="@dimen/margin_9"
-        android:layout_marginStart="@dimen/margin_16"
-        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/dp_9"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_20"
         />
 
     <com.google.android.material.button.MaterialButton
@@ -26,8 +26,8 @@
         android:text="@string/welcome_button_register"
         app:layout_constraintTop_toBottomOf="@id/welcome_horizontal_guideline"
         app:layout_constraintStart_toEndOf="@id/welcome_button_login"
-        android:layout_marginEnd="@dimen/margin_16"
-        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_20"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
