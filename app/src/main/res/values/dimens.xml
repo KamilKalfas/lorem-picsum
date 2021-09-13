@@ -2,15 +2,11 @@
 <resources>
     <dimen name="dp_0">0dp</dimen>
     <dimen name="dp_8">8dp</dimen>
-    <dimen name="dp_9">9dp</dimen>
     <dimen name="dp_16">16dp</dimen>
     <dimen name="dp_20">20dp</dimen>
-    <dimen name="dp_24">24dp</dimen>
-    <dimen name="do_48">48dp</dimen>
 
     <dimen name="prominent_toolbar_height">128dp</dimen>
 
     <dimen name="browse_all_item_height_small">220dp</dimen>
     <dimen name="browse_all_item_height_large">310dp</dimen>
-    <dimen name="browse_all_item_width">167dp</dimen>
 </resources>

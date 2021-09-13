@@ -1,4 +1,4 @@
-package com.kkalfas.lorempicsum.discovery.ui
+package com.kkalfas.lorempicsum.discover.ui
 
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +9,10 @@ import com.kkalfas.lorempicsum.R
 import com.kkalfas.lorempicsum.core.DataBindingProvider
 import com.kkalfas.lorempicsum.core.LayoutInflaterProvider
 import com.kkalfas.lorempicsum.core.ui.CoreRecycler
-import com.kkalfas.lorempicsum.discovery.data.PhotoItemDto
+import com.kkalfas.lorempicsum.discover.data.PhotoItemDto
+
+private const val INDEX_4 = 4
+private const val INDEX_5 = 5
 
 internal class BrowseAllAdapter(
     private val layoutInflaterProvider: LayoutInflaterProvider,
@@ -31,8 +34,8 @@ internal class BrowseAllAdapter(
     }
 
     override fun getItemViewType(position: Int): Int {
-        val type = when (position % 5) {
-            0, 4 -> SMALL
+        val type = when (position % INDEX_5) {
+            0, INDEX_4 -> SMALL
             else -> LARGE
         }
         println("PhotoItemType : $type")

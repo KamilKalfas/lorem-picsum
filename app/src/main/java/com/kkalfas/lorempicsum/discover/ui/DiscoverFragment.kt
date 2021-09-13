@@ -1,18 +1,18 @@
-package com.kkalfas.lorempicsum.discovery.ui
+package com.kkalfas.lorempicsum.discover.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.kkalfas.lorempicsum.R
 import com.kkalfas.lorempicsum.core.DataBindingProvider
 import com.kkalfas.lorempicsum.core.LayoutInflaterProvider
 import com.kkalfas.lorempicsum.core.ui.CoreFragment
-import com.kkalfas.lorempicsum.databinding.DiscoveryFragmentBinding
-import com.kkalfas.lorempicsum.discovery.data.PhotoItemDto
+import com.kkalfas.lorempicsum.databinding.DiscoverFragmentBinding
+import com.kkalfas.lorempicsum.discover.data.PhotoItemDto
 
-internal class DiscoveryFragment : CoreFragment<DiscoveryFragmentBinding>(R.layout.discovery_fragment) {
+private const val SPAN_COUNT = 2
+
+internal class DiscoveryFragment : CoreFragment<DiscoverFragmentBinding>(R.layout.discover_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,10 +24,7 @@ internal class DiscoveryFragment : CoreFragment<DiscoveryFragmentBinding>(R.layo
 
         with(binding.discoveryBrowseAllRecycler) {
             val browseAllAdapter = BrowseAllAdapter(inflaterProvider, bindingProvider)
-            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-            val dividerItemDecoration = DividerItemDecoration(context, StaggeredGridLayoutManager.VERTICAL)
-            dividerItemDecoration.setDrawable(ContextCompat.getDrawable(context, R.drawable.divider)!!)
-            addItemDecoration(dividerItemDecoration)
+            layoutManager = StaggeredGridLayoutManager(SPAN_COUNT, StaggeredGridLayoutManager.VERTICAL)
             browseAllAdapter.items = Mock.feed
             adapter = browseAllAdapter
         }

@@ -1,4 +1,4 @@
-package com.kkalfas.lorempicsum.discovery.data
+package com.kkalfas.lorempicsum.discover.data
 
 internal data class PhotoItemDto(
     val name: String,

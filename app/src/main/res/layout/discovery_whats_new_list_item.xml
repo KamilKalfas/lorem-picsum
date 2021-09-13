@@ -7,25 +7,26 @@
 
         <variable
             name="photoDto"
-            type="com.kkalfas.lorempicsum.discovery.data.PhotoItemDto" />
+            type="com.kkalfas.lorempicsum.discover.data.PhotoItemDto" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardUseCompatPadding="true"
         app:cardCornerRadius="@dimen/dp_0"
-        app:cardElevation="6dp">
+        app:cardElevation="6dp"
+        app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:padding="@dimen/dp_16"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_16">
 
             <ImageView
                 android:id="@+id/whats_new_item_image"
-                android:layout_width="343dp"
+                android:layout_width="match_parent"
                 android:layout_height="343dp"
+                android:contentDescription="@null"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -48,8 +49,8 @@
             <TextView
                 android:id="@+id/whats_new_item_author_name"
                 android:layout_width="0dp"
-                android:layout_marginStart="@dimen/dp_8"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
                 android:text="@{photoDto.name}"
                 android:textAppearance="?textAppearanceOverline"
                 app:layout_constraintStart_toEndOf="@id/whats_new_item_author_avatar"
@@ -59,8 +60,8 @@
             <TextView
                 android:id="@+id/whats_new_item_author_username"
                 android:layout_width="0dp"
-                android:layout_marginStart="@dimen/dp_8"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
                 android:text="@{photoDto.profileName}"
                 android:textAppearance="?textAppearanceCaption"
                 app:layout_constraintBottom_toBottomOf="@id/whats_new_item_author_avatar"

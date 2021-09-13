@@ -14,7 +14,7 @@
         app:layout_constraintTop_toBottomOf="@id/welcome_horizontal_guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/welcome_button_register"
-        android:layout_marginEnd="@dimen/dp_9"
+        android:layout_marginEnd="@dimen/dp_8"
         android:layout_marginStart="@dimen/dp_16"
         android:layout_marginTop="@dimen/dp_20"
         />

@@ -11,7 +11,8 @@ import com.bumptech.glide.Glide
 object BindingAdapters {
 
     @BindingAdapter("scrollOrientation")
-    @JvmStatic fun layoutManager(recyclerView: RecyclerView, layoutOrientation: Int) {
+    @JvmStatic
+    fun layoutManager(recyclerView: RecyclerView, layoutOrientation: Int) {
         if (layoutOrientation == RecyclerView.HORIZONTAL) {
             recyclerView.layoutManager = LinearLayoutManager(
                 recyclerView.context,
@@ -24,7 +25,8 @@ object BindingAdapters {
     }
 
     @BindingAdapter("loadAvatar")
-    @JvmStatic fun loadAvatar(view: ImageView, url: String) {
+    @JvmStatic
+    fun loadAvatar(view: ImageView, url: String) {
         val placeHolder =
             ColorDrawable(ContextCompat.getColor(view.context, android.R.color.darker_gray))
         if (url.isNotBlank()) {
@@ -40,7 +42,8 @@ object BindingAdapters {
     }
 
     @BindingAdapter("loadPhoto")
-    @JvmStatic fun loadPhoto(view: ImageView, url: String) {
+    @JvmStatic
+    fun loadPhoto(view: ImageView, url: String) {
         val placeHolder =
             ColorDrawable(ContextCompat.getColor(view.context, android.R.color.darker_gray))
         if (url.isNotEmpty()) {

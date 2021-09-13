@@ -35,6 +35,8 @@
         <entry key="app/src/main/res/layout/discovery_browse_all_small_item.xml" value="0.6026041666666667" />
         <entry key="app/src/main/res/layout/discovery_fragment.xml" value="0.5398550724637681" />
         <entry key="app/src/main/res/layout/discovery_whats_new_list_item.xml" value="0.6026041666666667" />
+        <entry key="app/src/main/res/layout/login_fragment.xml" value="0.36822916666666666" />
+        <entry key="app/src/main/res/layout/signup_fragment.xml" value="0.36822916666666666" />
       </map>
     </option>
   </component>

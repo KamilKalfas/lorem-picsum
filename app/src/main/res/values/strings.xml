@@ -22,8 +22,9 @@
     <string name="login_button_label">@string/welcome_button_login</string>
     <!-- login_fragment end-->
 
-    <!-- discovery_fragment start-->
-    <string name="discovery_title">Discovery</string>
-    <string name="discovery_whats_new_label">What’s new today</string>
-    <!-- discovery_fragment end-->
+    <!-- discover_fragment start-->
+    <string name="discover_title">Discover</string>
+    <string name="discover_whats_new_label">What’s new today</string>
+    <string name="discover_browse_all_label">Browse all</string>
+    <!-- discover_fragment end-->
 </resources>
