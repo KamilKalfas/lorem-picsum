@@ -64,6 +64,7 @@
                     android:id="@+id/discovery_whats_new_recycler"
                     android:layout_width="@dimen/width_0"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_24"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/discovery_whats_new_label"
@@ -86,10 +87,11 @@
                     android:id="@+id/discovery_browse_all_recycler"
                     android:layout_width="@dimen/width_0"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_24"
+                    app:layout_constraintBaseline_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/end_guideline"
                     app:layout_constraintStart_toStartOf="@id/start_guideline"
-                    app:layout_constraintTop_toBottomOf="@id/discovery_browse_all_label"
-                    app:scrollOrientation="@{RecyclerView.VERTICAL}" />
+                    app:layout_constraintTop_toBottomOf="@id/discovery_browse_all_label" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/start_guideline"

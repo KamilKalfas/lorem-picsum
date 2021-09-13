@@ -2,6 +2,7 @@ package com.kkalfas.lorempicsum.discovery.ui
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import com.kkalfas.lorempicsum.BR
 import com.kkalfas.lorempicsum.R
 import com.kkalfas.lorempicsum.core.DataBindingProvider
@@ -9,7 +10,7 @@ import com.kkalfas.lorempicsum.core.LayoutInflaterProvider
 import com.kkalfas.lorempicsum.core.ui.CoreRecycler
 import com.kkalfas.lorempicsum.discovery.data.PhotoItemDto
 
-internal class DiscoveryRecyclerAdapter(
+internal class WhatsNewAdapter(
     private val layoutInflaterProvider: LayoutInflaterProvider,
     private val dataBindingProvider: DataBindingProvider
 ) : CoreRecycler<PhotoItemDto>() {
