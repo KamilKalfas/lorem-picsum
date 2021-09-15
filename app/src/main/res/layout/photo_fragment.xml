@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="photoDto"
+            type="com.kkalfas.lorempicsum.discover.data.PhotoItemDto" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@android:color/transparent"
+            app:navigationContentDescription="@string/content_description_close_button"
+            app:navigationIcon="@drawable/ic_close"
+            app:subtitle="@{photoDto.profileName}"
+            app:title="@{photoDto.name}"
+            tools:subtitle="\@name"
+            tools:title="Name Name" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/welcome_bg" />
+    </RelativeLayout>
+</layout>

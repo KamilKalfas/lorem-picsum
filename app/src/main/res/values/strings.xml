@@ -27,4 +27,6 @@
     <string name="discover_whats_new_label">What’s new today</string>
     <string name="discover_browse_all_label">Browse all</string>
     <!-- discover_fragment end-->
+
+    <string name="content_description_close_button">Close</string>
 </resources>
