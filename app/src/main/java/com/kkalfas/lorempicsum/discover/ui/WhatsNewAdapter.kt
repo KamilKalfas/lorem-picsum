@@ -16,7 +16,7 @@ internal class WhatsNewAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = layoutInflaterProvider.get(parent.context)
-        return ViewHolder(dataBindingProvider.inflate(inflater, R.layout.discovery_whats_new_list_item, parent, false))
+        return ViewHolder(dataBindingProvider.inflate(inflater, R.layout.discover_whats_new_list_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
