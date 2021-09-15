@@ -22,8 +22,8 @@ internal class BrowseAllAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, @PhotoItemType viewType: Int): ViewHolder {
         val inflater = layoutInflaterProvider.get(parent.context)
         @LayoutRes val layoutId = when (viewType) {
-            SMALL -> R.layout.discovery_browse_all_small_item
-            LARGE -> R.layout.discovery_browse_all_large_item
+            SMALL -> R.layout.discover_browse_all_small_item
+            LARGE -> R.layout.discover_browse_all_large_item
             else -> throw IllegalStateException("$viewType not defined in PhotoItemType")
         }
         return ViewHolder(dataBindingProvider.inflate(inflater, layoutId, parent, false))

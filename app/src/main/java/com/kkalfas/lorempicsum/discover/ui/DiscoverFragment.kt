@@ -12,17 +12,17 @@ import com.kkalfas.lorempicsum.discover.data.PhotoItemDto
 
 private const val SPAN_COUNT = 2
 
-internal class DiscoveryFragment : CoreFragment<DiscoverFragmentBinding>(R.layout.discover_fragment) {
+internal class DiscoverFragment : CoreFragment<DiscoverFragmentBinding>(R.layout.discover_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val inflaterProvider = LayoutInflaterProvider()
         val bindingProvider = DataBindingProvider()
         val whatsNewTodayAdapter = WhatsNewAdapter(inflaterProvider, bindingProvider)
-        binding.discoveryWhatsNewRecycler.adapter = whatsNewTodayAdapter
+        binding.discoverWhatsNewRecycler.adapter = whatsNewTodayAdapter
         whatsNewTodayAdapter.items = Mock.feed
 
-        with(binding.discoveryBrowseAllRecycler) {
+        with(binding.discoverBrowseAllRecycler) {
             val browseAllAdapter = BrowseAllAdapter(inflaterProvider, bindingProvider)
             layoutManager = StaggeredGridLayoutManager(SPAN_COUNT, StaggeredGridLayoutManager.VERTICAL)
             browseAllAdapter.items = Mock.feed
