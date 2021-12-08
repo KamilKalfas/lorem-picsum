@@ -29,4 +29,8 @@
     <!-- discover_fragment end-->
 
     <string name="content_description_close_button">Close</string>
+    <string name="label_bottom_nav_home">Home</string>
+    <string name="label_bottom_nav_search">Search</string>
+    <string name="label_bottom_nav_chats">Chats</string>
+    <string name="label_bottom_nav_profile">Profile</string>
 </resources>

@@ -2,7 +2,7 @@ package com.kkalfas.lorempicsum.discover.ui
 
 import android.view.View
 import android.view.ViewGroup
-import com.kkalfas.lorempicsum.BR
+import androidx.navigation.findNavController
 import com.kkalfas.lorempicsum.R
 import com.kkalfas.lorempicsum.core.DataBindingProvider
 import com.kkalfas.lorempicsum.core.LayoutInflaterProvider
@@ -19,13 +19,10 @@ internal class WhatsNewAdapter(
         return ViewHolder(dataBindingProvider.inflate(inflater, R.layout.discover_whats_new_list_item, parent, false))
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindVariable(BR.photoDto, items[position])
-    }
-
     override fun areItemsTheSame(t1: PhotoItemDto, t2: PhotoItemDto) = t1 == t2
 
     override fun onItemClick(view: View, item: PhotoItemDto) {
-        // todo
+        val action = DiscoverFragmentDirections.actionDiscoverFragmentToPhotoFragment(item)
+        view.findNavController().navigate(action)
     }
 }

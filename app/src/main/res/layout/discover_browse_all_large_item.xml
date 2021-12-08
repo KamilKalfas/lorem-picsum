@@ -5,7 +5,7 @@
     <data>
 
         <variable
-            name="photoDto"
+            name="viewModel"
             type="com.kkalfas.lorempicsum.discover.data.PhotoItemDto" />
     </data>
 
@@ -23,6 +23,6 @@
             android:layout_height="match_parent"
             android:contentDescription="@null"
             android:scaleType="centerCrop"
-            app:loadPhoto="@{photoDto.photoUrl}" />
+            app:loadPhoto="@{viewModel.photoUrl}" />
     </androidx.cardview.widget.CardView>
 </layout>
