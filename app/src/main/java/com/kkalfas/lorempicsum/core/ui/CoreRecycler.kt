@@ -4,6 +4,7 @@ import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.kkalfas.lorempicsum.BR
 import kotlin.properties.Delegates
 
 internal interface DiffUtilCompareCallback<Type> {
@@ -35,8 +36,8 @@ internal abstract class CoreRecycler<Type : Any> :
             dataBinding.root.setOnClickListener {
                 onItemClick(it, viewModel)
             }
-//            dataBinding.setVariable(BR.viewModel, viewModel)
-            dataBinding.executePendingBindings()
+            dataBinding.setVariable(BR.viewModel, viewModel)
+//            dataBinding.executePendingBindings()
         }
 
         fun <T> bindVariable(variableId: Int, variable: T) {

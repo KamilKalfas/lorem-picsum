@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="photoDto"
+            name="viewModel"
             type="com.kkalfas.lorempicsum.discover.data.PhotoItemDto" />
     </data>
 
@@ -31,7 +31,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:loadPhoto="@{photoDto.photoUrl}"
+                app:loadPhoto="@{viewModel.photoUrl}"
                 tools:src="@drawable/welcome_bg" />
 
             <com.google.android.material.imageview.ShapeableImageView
@@ -42,7 +42,7 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="@id/whats_new_item_image"
                 app:layout_constraintTop_toBottomOf="@id/whats_new_item_image"
-                app:loadAvatar="@{photoDto.profileImageUrl}"
+                app:loadAvatar="@{viewModel.profileImageUrl}"
                 app:shapeAppearanceOverlay="@style/circleImageView"
                 tools:src="@drawable/welcome_bg" />
 
@@ -51,7 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_8"
-                android:text="@{photoDto.name}"
+                android:text="@{viewModel.name}"
                 android:textAppearance="?textAppearanceOverline"
                 app:layout_constraintStart_toEndOf="@id/whats_new_item_author_avatar"
                 app:layout_constraintTop_toTopOf="@id/whats_new_item_author_avatar"
@@ -62,7 +62,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_8"
-                android:text="@{photoDto.profileName}"
+                android:text="@{viewModel.profileName}"
                 android:textAppearance="?textAppearanceCaption"
                 app:layout_constraintBottom_toBottomOf="@id/whats_new_item_author_avatar"
                 app:layout_constraintStart_toEndOf="@id/whats_new_item_author_avatar"

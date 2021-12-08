@@ -4,7 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
-import com.kkalfas.lorempicsum.BR
+import androidx.navigation.findNavController
 import com.kkalfas.lorempicsum.R
 import com.kkalfas.lorempicsum.core.DataBindingProvider
 import com.kkalfas.lorempicsum.core.LayoutInflaterProvider
@@ -29,23 +29,19 @@ internal class BrowseAllAdapter(
         return ViewHolder(dataBindingProvider.inflate(inflater, layoutId, parent, false))
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindVariable(BR.photoDto, items[position])
-    }
-
     override fun getItemViewType(position: Int): Int {
         val type = when (position % INDEX_5) {
             0, INDEX_4 -> SMALL
             else -> LARGE
         }
-        println("PhotoItemType : $type")
         return type
     }
 
     override fun areItemsTheSame(t1: PhotoItemDto, t2: PhotoItemDto) = t1 == t2
 
     override fun onItemClick(view: View, item: PhotoItemDto) {
-        // todo
+        val action = DiscoverFragmentDirections.actionDiscoverFragmentToPhotoFragment(item)
+        view.findNavController().navigate(action)
     }
 
     private companion object {

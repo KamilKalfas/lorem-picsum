@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/discovery"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_24"
+        app:showAsAction="always"
+        android:title="@string/label_bottom_nav_home"/>
+    <item
+        android:id="@+id/search"
+        android:enabled="true"
+        android:icon="@drawable/ic_search_24"
+        app:showAsAction="always"
+        android:title="@string/label_bottom_nav_search"/>
+    <item
+        android:id="@+id/chats"
+        android:enabled="true"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_chats_24"
+        android:title="@string/label_bottom_nav_chats"/>
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_profile_24"
+        android:title="@string/label_bottom_nav_profile"/>
+</menu>
