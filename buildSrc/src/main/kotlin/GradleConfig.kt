@@ -1,5 +1,3 @@
-package com.buildsrc
-
 object GradleConfig {
     const val Android_Gradle = "com.android.tools.build:gradle:${Version.Android_Gradle}"
     const val Kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.Kotlin}"
@@ -8,8 +6,8 @@ object GradleConfig {
 
     object Version {
         const val Android_Gradle = "7.1.3"
-        const val Kotlin = "7.1.3"
-        const val Detekt = "7.1.3"
-        const val Nav_Safe_Args = "7.1.3"
+        const val Kotlin = "1.6.21"
+        const val Detekt = "1.20.0"
+        const val Nav_Safe_Args = "2.4.2"
     }
 }
