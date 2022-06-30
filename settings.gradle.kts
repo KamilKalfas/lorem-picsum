@@ -1,6 +1,19 @@
-include(":app")
-rootProject.name = "Lorem Picsum"
 
-rootProject.children.forEach { project ->
-    project.buildFileName = "${project.name}_build.gradle.kts"
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
 }
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "Lorem Picsum"
+include(":app")

@@ -1,20 +1,17 @@
 buildscript {
-
     repositories {
-        gradlePluginPortal()
         google()
+        maven(url = "https://plugins.gradle.org/m2/")
         mavenCentral()
+        gradlePluginPortal()
     }
 
     dependencies {
-        classpath(GradleConfig.Android_Gradle)
-        classpath(GradleConfig.Kotlin)
-        classpath(GradleConfig.Detekt)
-        classpath(GradleConfig.NavSafeArgs)
+        classpath(GradleConfig.AndroidGP)
+        classpath(GradleConfig.KotlinGP)
+        classpath(GradleConfig.SafeArgsGP)
     }
 }
-
-apply(from = "gradle/detekt.gradle.kts")
 
 subprojects {
     repositories {

@@ -1,10 +1,12 @@
 plugins {
     id("com.android.application")
-    kotlin("android")
+    id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
 }
+
+apply(from = "$rootDir/config/quality.gradle.kts")
 
 android {
     compileSdk = 32
@@ -31,7 +33,6 @@ android {
     }
 
     kotlinOptions {
-        allWarningsAsErrors = true
         jvmTarget = "1.8"
     }
 
@@ -49,16 +50,16 @@ android {
 
 dependencies {
     // kotlin start
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.21")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:${GradleConfig.Version.Kotlin}")
     // kotlin end
 
     // androidx start
-    implementation("androidx.core:core-ktx:1.8.0")
-    implementation("androidx.appcompat:appcompat:1.4.2")
+    implementation("androidx.core:core-ktx:1.9.0-alpha05")
+    implementation("androidx.appcompat:appcompat:1.6.0-alpha05")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    implementation("androidx.navigation:navigation-fragment-ktx:2.4.2")
-    implementation("androidx.navigation:navigation-ui-ktx:2.4.2")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.0-rc02")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.0-rc02")
     // androidx end
 
     // google start
