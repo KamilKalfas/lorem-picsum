@@ -28,22 +28,7 @@ console-reports:
   #  - 'BuildFailureReport'
 
 comments:
-  active: true
-  CommentOverPrivateFunction:
-    active: false
-  CommentOverPrivateProperty:
-    active: false
-  EndOfSentenceFormat:
-    active: false
-    endOfSentenceFormat: ([.?!][ \t\n\r\f<])|([.?!]$)
-  UndocumentedPublicClass:
-    active: false
-    searchInNestedClass: true
-    searchInInnerClass: true
-    searchInInnerObject: true
-    searchInInnerInterface: true
-  UndocumentedPublicFunction:
-    active: false
+  active: false
 
 complexity:
   active: true
@@ -70,7 +55,8 @@ complexity:
     threshold: 60
   LongParameterList:
     active: true
-    threshold: 6
+    functionThreshold: 6
+    constructorThreshold: 6
     ignoreDefaultParameters: false
   MethodOverloading:
     active: false
@@ -114,7 +100,7 @@ empty-blocks:
     active: true
   EmptyFunctionBlock:
     active: true
-    ignoreOverriddenFunctions: false
+    ignoreOverridden: false
   EmptyIfBlock:
     active: true
   EmptyInitBlock:
@@ -132,7 +118,6 @@ exceptions:
   active: true
   ExceptionRaisedInUnexpectedLocation:
     active: false
-    methodNames: 'toString,hashCode,equals,finalize'
   InstanceOfCheckForException:
     active: false
   NotImplementedDeclaration:
@@ -145,14 +130,12 @@ exceptions:
     active: false
   SwallowedException:
     active: false
-    ignoredExceptionTypes: 'InterruptedException,NumberFormatException,ParseException,MalformedURLException'
   ThrowingExceptionFromFinally:
     active: false
   ThrowingExceptionInMain:
     active: false
   ThrowingExceptionsWithoutMessageOrCause:
     active: false
-    exceptions: 'IllegalArgumentException,IllegalStateException,IOException'
   ThrowingNewInstanceOfSameException:
     active: false
   TooGenericExceptionCaught:
@@ -174,99 +157,6 @@ exceptions:
       - Exception
       - Throwable
       - RuntimeException
-
-formatting:
-  active: true
-  android: true
-  autoCorrect: true
-  ChainWrapping:
-    active: true
-    autoCorrect: true
-  CommentSpacing:
-    active: true
-    autoCorrect: true
-  Filename:
-    active: true
-  FinalNewline:
-    active: true
-    autoCorrect: true
-  ImportOrdering:
-    active: false
-  Indentation:
-    active: true
-    autoCorrect: true
-    indentSize: 4
-    continuationIndentSize: 4
-  MaximumLineLength:
-    active: true
-    maxLineLength: 120
-  ModifierOrdering:
-    active: true
-    autoCorrect: true
-  NoBlankLineBeforeRbrace:
-    active: true
-    autoCorrect: true
-  NoConsecutiveBlankLines:
-    active: true
-    autoCorrect: true
-  NoEmptyClassBody:
-    active: true
-    autoCorrect: true
-  NoLineBreakAfterElse:
-    active: true
-    autoCorrect: true
-  NoLineBreakBeforeAssignment:
-    active: true
-    autoCorrect: true
-  NoMultipleSpaces:
-    active: true
-    autoCorrect: true
-  NoSemicolons:
-    active: true
-    autoCorrect: true
-  NoTrailingSpaces:
-    active: true
-    autoCorrect: true
-  NoUnitReturn:
-    active: true
-    autoCorrect: true
-  NoUnusedImports:
-    active: true
-    autoCorrect: true
-  NoWildcardImports:
-    active: true
-    autoCorrect: true
-  PackageName:
-    active: true
-    autoCorrect: true
-  ParameterListWrapping:
-    active: true
-    autoCorrect: true
-    indentSize: 4
-  SpacingAroundColon:
-    active: true
-    autoCorrect: true
-  SpacingAroundComma:
-    active: true
-    autoCorrect: true
-  SpacingAroundCurly:
-    active: true
-    autoCorrect: true
-  SpacingAroundKeyword:
-    active: true
-    autoCorrect: true
-  SpacingAroundOperators:
-    active: true
-    autoCorrect: true
-  SpacingAroundParens:
-    active: true
-    autoCorrect: true
-  SpacingAroundRangeOperator:
-    active: true
-    autoCorrect: true
-  StringTemplate:
-    active: true
-    autoCorrect: true
 
 naming:
   active: true
@@ -299,12 +189,12 @@ naming:
     active: true
     parameterPattern: '[a-z][A-Za-z0-9]*'
     excludeClassPattern: '$^'
-    ignoreOverriddenFunctions: true
+    ignoreOverridden: true
   MatchingDeclarationName:
     active: true
   MemberNameEqualsClassName:
     active: false
-    ignoreOverriddenFunction: true
+    ignoreOverridden: true
   ObjectPropertyNaming:
     active: true
     constantPattern: '[A-Za-z][_A-Za-z0-9]*'
@@ -360,8 +250,6 @@ potential-bugs:
     active: false
   LateinitUsage:
     active: false
-    excludeAnnotatedProperties: ""
-    ignoreOnClassesPattern: ""
   UnconditionalJumpStatementInLoop:
     active: false
   UnreachableCode:
@@ -392,8 +280,7 @@ style:
     active: false
     includeLineWrapping: false
   ForbiddenComment:
-    active: true
-    values: 'TODO:,FIXME:,STOPSHIP:'
+    active: false
   ForbiddenImport:
     active: false
     imports: ''
@@ -401,21 +288,10 @@ style:
     active: false
   FunctionOnlyReturningConstant:
     active: false
-    ignoreOverridableFunction: true
-    excludedFunctions: 'describeContents'
   LoopWithTooManyJumpStatements:
     active: false
-    maxJumpCount: 1
   MagicNumber:
-    active: true
-    ignoreNumbers: '-1,0,1,2'
-    ignoreHashCodeFunction: true
-    ignorePropertyDeclaration: false
-    ignoreConstantDeclaration: true
-    ignoreCompanionObjectPropertyDeclaration: true
-    ignoreAnnotation: false
-    ignoreNamedArgument: true
-    ignoreEnums: false
+    active: false
   MandatoryBracesIfStatements:
     active: false
   MaxLineLength:
@@ -465,10 +341,9 @@ style:
     active: false
   UnderscoresInNumericLiterals:
     active: false
-    acceptableDecimalLength: 5
+    acceptableLength: 5
   UnnecessaryAbstractClass:
     active: false
-    excludeAnnotatedClasses: "dagger.Module"
   UnnecessaryApply:
     active: false
   UnnecessaryInheritance:
@@ -485,10 +360,8 @@ style:
     active: false
   UnusedPrivateMember:
     active: false
-    allowedNames: "(_|ignored|expected|serialVersionUID)"
   UseDataClass:
     active: false
-    excludeAnnotatedClasses: ""
   UtilityClassWithPublicConstructor:
     active: false
   VarCouldBeVal:

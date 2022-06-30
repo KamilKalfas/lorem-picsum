@@ -6,7 +6,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.kkalfas.lorempicsum.databinding.MainActivityBinding
-import com.kkalfas.lorempicsum.discover.ui.DiscoverFragment
 
 class MainActivity : AppCompatActivity() {
 
