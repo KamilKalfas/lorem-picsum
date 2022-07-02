@@ -1,37 +1,49 @@
 package com.kkalfas.lorempicsum
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
-import com.kkalfas.lorempicsum.databinding.MainActivityBinding
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.DrawerDefaults
+import androidx.compose.material.Scaffold
+import androidx.compose.material.contentColorFor
+import androidx.compose.ui.Modifier
+import androidx.core.view.WindowCompat
+import com.kkalfas.lorempicsum.common.ui.components.bottomnavigation.BottomNavItem
+import com.kkalfas.lorempicsum.common.ui.components.bottomnavigation.BottomNavigationComponent
+import com.kkalfas.lorempicsum.theme.ui.AppTheme
+import com.kkalfas.lorempicsum.theme.ui.Theme
 
-class MainActivity : AppCompatActivity() {
-
-    private var _binding: MainActivityBinding? = null
-    internal val binding get() = _binding!!
-
-    private val flowsWithBottomBarDestinationIds = setOf(R.id.discoverFragment, R.id.searchFragment, R.id.chatsFragment, R.id.profileFragment)
-    private val navController: NavController by lazy {
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
-        navHostFragment.navController
-    }
+class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = MainActivityBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        binding.bottomNavigation.setupWithNavController(navController)
-    }
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        setContent {
+            AppTheme {
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    drawerBackgroundColor = Theme.colors.uiBackground,
+                    drawerContentColor = contentColorFor(Theme.colors.uiBackground),
+                    drawerScrimColor = DrawerDefaults.scrimColor,
+                    backgroundColor = Theme.colors.uiBackground,
+                    contentColor = Theme.colors.brandSecondary,
+                    bottomBar = {
+                        BottomNavigationComponent(
+                            selectedNavigation = BottomNavItem.Discover,
+                            onNavigationSelected = { selected ->
+                                // TODO add navigation
+                            }
+                        )
+                    }
+                ) { innerPadding ->
+                    Box(modifier = Modifier.padding(innerPadding)) {
 
-    override fun onSupportNavigateUp(): Boolean {
-        return if (navController.graph.id == R.id.home) navController.navigateUp()
-        else super.onSupportNavigateUp()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+                    }
+                }
+            }
+        }
     }
 }

@@ -9,15 +9,15 @@ plugins {
 apply(from = "$rootDir/config/quality.gradle.kts")
 
 android {
-    compileSdk = 32
+    compileSdk = GradleConfig.Project.compileSdk
 
     defaultConfig {
-        minSdk = 26
-        targetSdk = 30
-        versionCode = 1
-        versionName = "1.0"
-        applicationId = "com.kkalfas.lorempicsum"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        minSdk = GradleConfig.Project.minSdk
+        targetSdk = GradleConfig.Project.targetSdk
+        versionCode = GradleConfig.Project.versionCode
+        versionName = GradleConfig.Project.versionName
+        applicationId = GradleConfig.Project.applicationId
+        testInstrumentationRunner = GradleConfig.Project.testInstrumentationRunner
     }
 
     buildTypes {
@@ -35,6 +35,7 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
     }
 
     buildFeatures {
@@ -44,6 +45,13 @@ android {
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.2.0-beta01"
+    }
+
+    packagingOptions {
+        // Multiple dependency bring these files in. Exclude them to enable
+        // our test APK to build (has no effect on our AARs)
+        resources.excludes.add("/META-INF/AL2.0")
+        resources.excludes.add("/META-INF/LGPL2.1")
     }
 
     testOptions {
@@ -73,9 +81,20 @@ dependencies {
     implementation("androidx.compose.animation:animation:$compose_version")
     // jetpack compose end
 
+    // Accompanist
+    val accompanistVersion = "0.24.9-beta"
+    implementation("com.google.accompanist:accompanist-navigation-animation:0.23.1")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
+    implementation("com.google.accompanist:accompanist-swiperefresh:$accompanistVersion")
+    implementation("com.google.accompanist:accompanist-insets-ui:$accompanistVersion")
+
+    // coil start
+    implementation("io.coil-kt:coil-compose:1.4.0")
+    // coil end
+
     // androidx start
     implementation("androidx.activity:activity-compose:1.5.0")
-    implementation("androidx.core:core-ktx:1.9.0-alpha05")
+    implementation("androidx.core:core-ktx:1.8.0")
     implementation("androidx.appcompat:appcompat:Version 1.5.0-alpha01")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
