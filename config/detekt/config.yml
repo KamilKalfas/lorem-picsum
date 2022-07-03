@@ -54,9 +54,9 @@ complexity:
     active: true
     threshold: 60
   LongParameterList:
-    active: true
-    functionThreshold: 6
-    constructorThreshold: 6
+    active: false
+    functionThreshold: 10
+    constructorThreshold: 10
     ignoreDefaultParameters: false
   MethodOverloading:
     active: false
@@ -181,7 +181,7 @@ naming:
     active: false
     minimumFunctionNameLength: 3
   FunctionNaming:
-    active: true
+    active: false
     functionPattern: '^([a-z$][a-zA-Z$0-9]*)|(`.*`)$'
     excludeClassPattern: '$^'
     ignoreOverridden: true
