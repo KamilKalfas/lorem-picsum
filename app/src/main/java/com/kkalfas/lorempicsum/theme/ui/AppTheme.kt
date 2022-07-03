@@ -144,7 +144,6 @@ class LoremPicsumColors(
         notificationBadge = other.notificationBadge
         isDark = other.isDark
         transparent = other.transparent
-
     }
 
     fun copy(): LoremPicsumColors = LoremPicsumColors(
@@ -162,7 +161,7 @@ class LoremPicsumColors(
         notificationBadge = notificationBadge,
         isDark = isDark,
         brandGradient = bradGradient,
-        iconActive =iconActive,
+        iconActive = iconActive,
         iconInactive = iconInactive,
         transparent = transparent
     )
