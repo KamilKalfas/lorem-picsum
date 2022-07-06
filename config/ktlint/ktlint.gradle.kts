@@ -1,7 +1,7 @@
 val ktlint: Configuration by configurations.creating
 
 val disabledRules = listOf(
-    "import-ordering"
+    "import-ordering", "no-wildcard-imports"
 )
 
 dependencies {
