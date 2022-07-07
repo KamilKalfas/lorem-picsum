@@ -95,7 +95,7 @@ dependencies {
     // androidx start
     implementation("androidx.activity:activity-compose:1.5.0")
     implementation("androidx.core:core-ktx:1.8.0")
-    implementation("androidx.appcompat:appcompat:Version 1.5.0-alpha01")
+    implementation("androidx.appcompat:appcompat:1.5.0-alpha01")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.0-rc02")

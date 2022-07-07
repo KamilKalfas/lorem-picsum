@@ -191,7 +191,7 @@ naming:
     excludeClassPattern: '$^'
     ignoreOverridden: true
   MatchingDeclarationName:
-    active: true
+    active: false
   MemberNameEqualsClassName:
     active: false
     ignoreOverridden: true
@@ -368,4 +368,4 @@ style:
     active: false
   WildcardImport:
     active: true
-    excludeImports: 'java.util.*,kotlinx.android.synthetic.*'
+    excludeImports: ['java.util.*','kotlinx.android.synthetic.*','androidx.compose.foundation.layout.*']
