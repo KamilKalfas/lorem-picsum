@@ -3,6 +3,7 @@ package com.kkalfas.lorempicsum.discover.ui
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -29,18 +30,21 @@ import com.kkalfas.lorempicsum.ui.components.VerticalGrid
 @Composable
 fun DiscoverScreen(
     modifier: Modifier = Modifier,
-    viewModel: DiscoverViewModel
+    viewModel: DiscoverViewModel,
+    onPhotoItemClicked: (PhotoCardInfo) -> Unit
 ) {
     DiscoverContent(
         modifier = modifier,
-        uiState = viewModel.uiState.collectAsState().value
+        uiState = viewModel.uiState.collectAsState().value,
+        onPhotoItemClicked = onPhotoItemClicked
     )
 }
 
 @Composable
 private fun DiscoverContent(
     modifier: Modifier,
-    uiState: DiscoveryUiState
+    uiState: DiscoveryUiState,
+    onPhotoItemClicked: (PhotoCardInfo) -> Unit
 ) {
     Column(
         modifier = modifier
@@ -56,13 +60,15 @@ private fun DiscoverContent(
                 .verticalScroll(feedScrollState)
         ) {
             WhatsNewSection(
+                scrollState = whatsNewScrollState,
                 whatsNewFeed = uiState.whatsNewFeed,
-                scrollState = whatsNewScrollState
+                onPhotoItemClicked = onPhotoItemClicked
             )
             Spacer(modifier = Modifier.height(16.dp))
             BrowsAllSection(
                 isLoading = uiState.isLoading,
-                browseAllFeed = uiState.whatsNewFeed
+                browseAllFeed = uiState.whatsNewFeed,
+                onPhotoItemClicked = onPhotoItemClicked
             )
         }
     }
@@ -94,6 +100,7 @@ private fun Toolbar(scrollState: ScrollState) {
 private fun BrowsAllSection(
     isLoading: Boolean,
     browseAllFeed: List<PhotoCardInfo>,
+    onPhotoItemClicked: (PhotoCardInfo) -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -122,7 +129,8 @@ private fun BrowsAllSection(
                         Image(
                             modifier = Modifier
                                 .width(width.dp)
-                                .height(height.dp),
+                                .height(height.dp)
+                                .clickable { onPhotoItemClicked(card) },
                             contentScale = ContentScale.FillHeight,
                             painter = rememberImagePainter(
                                 data = card.photo.urlWidthHeight(width, height),
@@ -141,8 +149,9 @@ private fun BrowsAllSection(
 
 @Composable
 private fun WhatsNewSection(
+    scrollState: ScrollState,
     whatsNewFeed: List<PhotoCardInfo>,
-    scrollState: ScrollState
+    onPhotoItemClicked: (PhotoCardInfo) -> Unit
 ) {
     HorizontalSection(
         scrollState = scrollState,
@@ -151,7 +160,8 @@ private fun WhatsNewSection(
             {
                 Spacer(modifier = Modifier.width(16.dp))
                 PhotoCard(
-                    cardInfo = it
+                    cardInfo = it,
+                    onClick = onPhotoItemClicked
                 )
             }
         }
@@ -174,6 +184,7 @@ private fun PreviewDiscover() {
     )
     DiscoverContent(
         modifier = Modifier,
-        uiState = state
+        uiState = state,
+        onPhotoItemClicked = {}
     )
 }

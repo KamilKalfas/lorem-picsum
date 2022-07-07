@@ -14,7 +14,6 @@ import com.kkalfas.lorempicsum.common.ui.components.bottomnavigation.BottomNavig
 import com.kkalfas.lorempicsum.theme.ui.AppTheme
 import com.kkalfas.lorempicsum.theme.ui.Theme
 
-
 @Composable
 fun AppContainer() {
     AppTheme {

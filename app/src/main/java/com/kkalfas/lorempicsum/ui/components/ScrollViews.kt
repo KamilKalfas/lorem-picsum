@@ -64,7 +64,6 @@ private fun PreviewHorizontalScroll() {
                 add {
                     Box(modifier = Modifier.size(60.dp)) {
                         Text(text = "Text#$int")
-
                     }
                 }
             }

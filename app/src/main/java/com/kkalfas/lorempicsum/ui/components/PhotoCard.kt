@@ -1,6 +1,7 @@
 package com.kkalfas.lorempicsum.ui.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -20,14 +21,13 @@ data class PhotoCardInfo(
     val avatarUrl: String,
     val name: String,
     val username: String
-) {
-}
+)
 
 data class Photo(
     private val url: String,
 ) {
     fun urlWidthHeight(width: Int, height: Int) = "$url/$width/$height"
-    fun urlSize(size: Int) = "$url/$size"
+    fun urlSize(size: Int = photoCardSize) = "$url/$size"
 }
 
 private const val photoCardSize = 343
@@ -35,10 +35,11 @@ private const val photoCardSize = 343
 @Composable
 fun PhotoCard(
     modifier: Modifier = Modifier,
-    cardInfo: PhotoCardInfo
+    cardInfo: PhotoCardInfo,
+    onClick: (PhotoCardInfo) -> Unit
 ) {
     Card(
-        modifier = modifier,
+        modifier = modifier.clickable { onClick(cardInfo) },
         elevation = 4.dp
     ) {
         Column(
@@ -99,7 +100,8 @@ private fun PreviewPhotoCard() {
     )
     Column(Modifier.wrapContentSize()) {
         PhotoCard(
-            cardInfo = cardInfo
+            cardInfo = cardInfo,
+            onClick = {}
         )
     }
 }

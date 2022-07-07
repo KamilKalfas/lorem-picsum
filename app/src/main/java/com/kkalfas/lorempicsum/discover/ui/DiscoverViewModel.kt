@@ -5,7 +5,6 @@ import com.kkalfas.lorempicsum.ui.components.Photo
 import com.kkalfas.lorempicsum.ui.components.PhotoCardInfo
 import kotlinx.coroutines.flow.MutableStateFlow
 
-
 class DiscoverViewModel : ViewModel() {
 
     val uiState = MutableStateFlow(
