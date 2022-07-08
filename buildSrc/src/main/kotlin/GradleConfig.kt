@@ -11,7 +11,7 @@ object GradleConfig {
     }
 
     object Version {
-        const val Android_Gradle = "7.1.2"
+        const val Android_Gradle = "7.2.1"
         const val Kotlin = "1.6.21"
         const val Detekt = "1.20.0-RC1"
         const val Ktlint = "0.45.1"
