@@ -20,7 +20,7 @@
         tools:layout="@layout/photo_fragment"
         android:label="PhotoFragment" >
         <argument
-            android:name="photoDto"
-            app:argType="com.kkalfas.lorempicsum.discover.data.PhotoItemDto" />
+            android:name="photo"
+            app:argType="com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo" />
     </fragment>
 </navigation>

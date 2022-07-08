@@ -11,7 +11,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.kkalfas.lorempicsum.R
 import com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo
-import com.kkalfas.lorempicsum.discover.data.toLegacyDto
 
 internal class DiscoverFragment : Fragment() {
     private val viewModel by viewModels<DiscoverViewModel>()
@@ -33,7 +32,7 @@ internal class DiscoverFragment : Fragment() {
     }
 
     private fun navigateToPhotoDetails(item: PhotoCardInfo) {
-        val action = DiscoverFragmentDirections.actionDiscoverFragmentToPhotoFragment(item.toLegacyDto())
+        val action = DiscoverFragmentDirections.actionDiscoverFragmentToPhotoFragment(item)
         findNavController().navigate(action)
     }
 }

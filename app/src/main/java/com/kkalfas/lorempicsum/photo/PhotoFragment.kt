@@ -1,24 +1,28 @@
 package com.kkalfas.lorempicsum.photo
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import androidx.navigation.findNavController
+import android.view.ViewGroup
+import androidx.compose.ui.platform.ComposeView
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.kkalfas.lorempicsum.R
-import com.kkalfas.lorempicsum.core.ui.CoreFragment
-import com.kkalfas.lorempicsum.databinding.PhotoFragmentBinding
 
-internal class PhotoFragment : CoreFragment<PhotoFragmentBinding>(R.layout.photo_fragment) {
+internal class PhotoFragment : Fragment() {
 
     private val args: PhotoFragmentArgs by navArgs()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.viewModel = args.photoDto
-        with(binding.toolbar) {
-            setNavigationIcon(R.drawable.ic_close)
-            setNavigationOnClickListener {
-                view.findNavController().navigateUp()
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        return inflater.inflate(R.layout.photo_fragment, container, false).apply {
+            findViewById<ComposeView>(R.id.photo_compose_view).setContent {
+                PhotoScreen(
+                    photo = args.photo
+                )
             }
         }
     }
