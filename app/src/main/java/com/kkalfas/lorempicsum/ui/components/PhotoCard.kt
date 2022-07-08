@@ -14,21 +14,9 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.size.Scale
 import coil.transform.CircleCropTransformation
+import com.kkalfas.lorempicsum.common.domain.model.Photo
+import com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo
 import com.kkalfas.lorempicsum.theme.ui.Theme
-
-data class PhotoCardInfo(
-    val photo: Photo,
-    val avatarUrl: String,
-    val name: String,
-    val username: String
-)
-
-data class Photo(
-    private val url: String,
-) {
-    fun urlWidthHeight(width: Int, height: Int) = "$url/$width/$height"
-    fun urlSize(size: Int = photoCardSize) = "$url/$size"
-}
 
 private const val photoCardSize = 343
 

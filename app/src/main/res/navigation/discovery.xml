@@ -27,4 +27,5 @@
             android:name="photoDto"
             app:argType="com.kkalfas.lorempicsum.discover.data.PhotoItemDto" />
     </fragment>
+
 </navigation>
