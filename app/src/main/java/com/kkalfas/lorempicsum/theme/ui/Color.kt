@@ -25,8 +25,6 @@ fun lightColorPalette() = LoremPicsumColors(
     notificationBadge = Color.White
 )
 
-val Colors = lightColorPalette()
-
 internal fun darkColorPalette() = lightColorPalette()
 
 @Stable

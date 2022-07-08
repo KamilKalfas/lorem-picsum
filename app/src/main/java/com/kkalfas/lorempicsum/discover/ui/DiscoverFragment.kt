@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.kkalfas.lorempicsum.R
+import com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo
 import com.kkalfas.lorempicsum.discover.data.toLegacyDto
-import com.kkalfas.lorempicsum.ui.components.PhotoCardInfo
 
 internal class DiscoverFragment : Fragment() {
     private val viewModel by viewModels<DiscoverViewModel>()

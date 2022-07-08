@@ -1,8 +1,8 @@
 package com.kkalfas.lorempicsum.discover.ui
 
 import androidx.lifecycle.ViewModel
-import com.kkalfas.lorempicsum.ui.components.Photo
-import com.kkalfas.lorempicsum.ui.components.PhotoCardInfo
+import com.kkalfas.lorempicsum.common.domain.model.Photo
+import com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class DiscoverViewModel : ViewModel() {

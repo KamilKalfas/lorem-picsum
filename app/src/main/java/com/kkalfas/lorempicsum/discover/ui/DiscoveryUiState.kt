@@ -1,6 +1,6 @@
 package com.kkalfas.lorempicsum.discover.ui
 
-import com.kkalfas.lorempicsum.ui.components.PhotoCardInfo
+import com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo
 
 data class DiscoveryUiState(
     val isLoading: Boolean = true,

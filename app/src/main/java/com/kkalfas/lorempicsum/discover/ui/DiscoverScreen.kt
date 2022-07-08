@@ -19,12 +19,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.kkalfas.lorempicsum.R
+import com.kkalfas.lorempicsum.common.domain.model.Photo
+import com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo
 import com.kkalfas.lorempicsum.theme.ui.Theme
 import com.kkalfas.lorempicsum.ui.components.CollapsingToolbar
 import com.kkalfas.lorempicsum.ui.components.HorizontalSection
-import com.kkalfas.lorempicsum.ui.components.Photo
 import com.kkalfas.lorempicsum.ui.components.PhotoCard
-import com.kkalfas.lorempicsum.ui.components.PhotoCardInfo
 import com.kkalfas.lorempicsum.ui.components.VerticalGrid
 
 @Composable
