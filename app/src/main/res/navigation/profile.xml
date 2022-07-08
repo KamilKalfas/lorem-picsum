@@ -8,6 +8,19 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.kkalfas.lorempicsum.profile.ui.ProfileFragment"
-        tools:layout="@layout/profile_fragment" />
+        tools:layout="@layout/profile_fragment">
+        <action
+            android:id="@+id/action_profileFragment_to_photoFragment"
+            app:destination="@id/photoFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/photoFragment"
+        android:name="com.kkalfas.lorempicsum.photo.PhotoFragment"
+        tools:layout="@layout/photo_fragment"
+        android:label="PhotoFragment" >
+        <argument
+            android:name="photoDto"
+            app:argType="com.kkalfas.lorempicsum.discover.data.PhotoItemDto" />
+    </fragment>
 </navigation>

@@ -22,11 +22,16 @@
     <string name="login_button_label">@string/welcome_button_login</string>
     <!-- login_fragment end-->
 
-    <!-- discover_fragment start-->
+    <!-- discover  start-->
     <string name="discover_title">Discover</string>
     <string name="discover_whats_new_label">What’s new today</string>
     <string name="discover_browse_all_label">Browse all</string>
-    <!-- discover_fragment end-->
+    <!-- discover end-->
+
+    <!-- profile start-->
+    <string name="profile_follow_button_label">Follow %s</string>
+    <string name="profile_message_button_label">Message</string>
+    <!-- profile end-->
 
     <string name="content_description_close_button">Close</string>
     <string name="label_bottom_nav_home">Discover</string>
