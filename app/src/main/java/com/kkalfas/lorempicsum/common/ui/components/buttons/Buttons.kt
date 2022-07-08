@@ -2,7 +2,12 @@ package com.kkalfas.lorempicsum.common.ui.components.buttons
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
@@ -10,10 +15,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.kkalfas.lorempicsum.theme.ui.Theme
 
 @Composable
 fun PrimaryButton(
@@ -38,9 +43,9 @@ fun PrimaryButton(
     label: String,
 ) {
     val colors = ButtonDefaults.buttonColors(
-        backgroundColor = Color.Black,
-        contentColor = Color.White,
-        disabledBackgroundColor = Color.Black.copy(alpha = 0.3f)
+        backgroundColor = Theme.colors.uiBackgroundSecondary,
+        contentColor = Theme.colors.textSecondary,
+        disabledBackgroundColor = Theme.colors.uiBackgroundSecondary.copy(alpha = 0.3f)
     )
     Button(
         modifier = modifier.heightIn(min = 52.dp),
@@ -49,7 +54,7 @@ fun PrimaryButton(
         enabled = enabled,
         shape = MaterialTheme.shapes.small,
         content = {
-            Text(text = label)
+            Text(text = label.uppercase(), style = Theme.typography.primaryButton)
         }
     )
 }
@@ -77,9 +82,9 @@ fun SecondaryButton(
     label: String
 ) {
     val colors = ButtonDefaults.buttonColors(
-        backgroundColor = Color.White,
-        contentColor = Color.Black,
-        disabledBackgroundColor = Color.White.copy(alpha = 0.7f)
+        backgroundColor = Theme.colors.uiBackground,
+        contentColor = Theme.colors.textPrimary,
+        disabledBackgroundColor = Theme.colors.uiBackground.copy(alpha = 0.7f)
     )
     Button(
         modifier = modifier.heightIn(min = 52.dp),
@@ -87,9 +92,9 @@ fun SecondaryButton(
         colors = colors,
         enabled = enabled,
         shape = MaterialTheme.shapes.small,
-        border = BorderStroke(width = 2.dp, Color.Black),
+        border = BorderStroke(width = 2.dp, Theme.colors.textPrimary),
         content = {
-            Text(text = label)
+            Text(text = label.uppercase(), style = Theme.typography.secondaryButton)
         }
     )
 }
