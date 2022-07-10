@@ -23,6 +23,7 @@ fun CollapsingToolbar(
     collapsedHeight: Dp = 56.dp,
     expandedHeight: Dp = 112.dp,
     scrollState: ScrollState,
+    bottomBorderVisible: Boolean = true,
     content: @Composable () -> Unit
 ) {
     val height by animateDpAsState(
@@ -40,5 +41,5 @@ fun CollapsingToolbar(
         horizontalAlignment = Alignment.CenterHorizontally,
         content = { content() }
     )
-    Divider(modifier = Modifier.fillMaxWidth(), color = Theme.colors.uiBorder)
+    if (bottomBorderVisible) Divider(modifier = Modifier.fillMaxWidth(), color = Theme.colors.uiBorder)
 }

@@ -8,6 +8,19 @@
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.kkalfas.lorempicsum.search.ui.SearchFragment"
-        tools:layout="@layout/search_fragment" />
+        tools:layout="@layout/search_fragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_photoFragment"
+            app:destination="@id/photoFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/photoFragment"
+        android:name="com.kkalfas.lorempicsum.photo.PhotoFragment"
+        tools:layout="@layout/photo_fragment"
+        android:label="PhotoFragment" >
+        <argument
+            android:name="photo"
+            app:argType="com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo" />
+    </fragment>
 </navigation>

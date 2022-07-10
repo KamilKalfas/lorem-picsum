@@ -22,7 +22,7 @@
     <string name="login_button_label">@string/welcome_button_login</string>
     <!-- login_fragment end-->
 
-    <!-- discover  start-->
+    <!-- discover start-->
     <string name="discover_title">Discover</string>
     <string name="discover_whats_new_label">What’s new today</string>
     <string name="discover_browse_all_label">Browse all</string>
@@ -32,6 +32,13 @@
     <string name="profile_follow_button_label">Follow %s</string>
     <string name="profile_message_button_label">Message</string>
     <!-- profile end-->
+
+    <!-- search start-->
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search all photos</string>
+    <string name="search_all_result_label">All Results</string>
+    <string name="search_see_more_button">See More</string>
+    <!-- search end-->
 
     <string name="content_description_close_button">Close</string>
     <string name="label_bottom_nav_home">Discover</string>
