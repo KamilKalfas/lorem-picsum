@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.kkalfas.lorempicsum.welcome.login.LoginFragment"
+        android:name="com.kkalfas.lorempicsum.login.ui.LoginFragment"
         tools:layout="@layout/login_fragment"
         android:label="LoginFragment" >
         <action
@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/signUpFragment"
         tools:layout="@layout/signup_fragment"
-        android:name="com.kkalfas.lorempicsum.welcome.signup.SignUpFragment"
+        android:name="com.kkalfas.lorempicsum.signup.ui.SignUpFragment"
         android:label="SignUpFragment" >
         <action
             android:id="@+id/action_signUpFragment_to_discoverFragment"

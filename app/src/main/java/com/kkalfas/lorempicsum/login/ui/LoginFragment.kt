@@ -1,4 +1,4 @@
-package com.kkalfas.lorempicsum.welcome.login
+package com.kkalfas.lorempicsum.login.ui
 
 import android.os.Bundle
 import android.view.View
