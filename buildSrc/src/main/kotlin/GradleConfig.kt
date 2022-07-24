@@ -1,7 +1,6 @@
 object GradleConfig {
     const val AndroidGP = "com.android.tools.build:gradle:${Version.Android_Gradle}"
     const val KotlinGP = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.Kotlin}"
-    const val DetektGP = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${Version.Detekt}"
     const val SafeArgsGP =
         "androidx.navigation:navigation-safe-args-gradle-plugin:${Version.Nav_Safe_Args}"
 

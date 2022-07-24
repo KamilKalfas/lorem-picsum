@@ -109,6 +109,7 @@ dependencies {
     // third parties start
     implementation("com.github.bumptech.glide:glide:4.13.2")
     kapt("com.github.bumptech.glide:compiler:4.13.2")
+    implementation("com.jakewharton.timber:timber:5.0.1")
     // third parties end
 
     // test start
