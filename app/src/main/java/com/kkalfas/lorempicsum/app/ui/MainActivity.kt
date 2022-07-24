@@ -1,10 +1,10 @@
-package com.kkalfas.lorempicsum
+package com.kkalfas.lorempicsum.app.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
+import com.kkalfas.lorempicsum.R
 import com.kkalfas.lorempicsum.databinding.MainActivityBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.bottomNavigation.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {

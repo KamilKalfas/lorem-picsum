@@ -1,5 +1,7 @@
 package com.kkalfas.lorempicsum.discover.ui
 
+import android.app.Activity
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
@@ -14,6 +16,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -33,6 +36,15 @@ fun DiscoverScreen(
     viewModel: DiscoverViewModel,
     onPhotoItemClicked: (PhotoCardInfo) -> Unit
 ) {
+
+    // TODO remove after navigation compose migration
+    val activity = (LocalContext.current as? Activity)
+    BackHandler {
+        activity?.let {
+            it.finish()
+        }
+    }
+
     DiscoverContent(
         modifier = modifier,
         uiState = viewModel.uiState.collectAsState().value,

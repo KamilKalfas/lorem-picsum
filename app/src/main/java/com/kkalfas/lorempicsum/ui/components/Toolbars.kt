@@ -17,6 +17,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.max
 import com.kkalfas.lorempicsum.theme.ui.Theme
 
+private const val defaultToolbarSize = 112
+
 @Composable
 fun CollapsingToolbar(
     modifier: Modifier = Modifier,
@@ -41,5 +43,24 @@ fun CollapsingToolbar(
         horizontalAlignment = Alignment.CenterHorizontally,
         content = { content() }
     )
-    if (bottomBorderVisible) Divider(modifier = Modifier.fillMaxWidth(), color = Theme.colors.uiBorder)
+    if (bottomBorderVisible) Divider(
+        modifier = Modifier.fillMaxWidth(),
+        color = Theme.colors.uiBorder
+    )
+}
+
+@Composable
+fun AppToolbar(
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit
+) {
+    Column(
+        modifier = modifier
+            .statusBarsPadding()
+            .fillMaxWidth()
+            .height(defaultToolbarSize.dp)
+            .padding(2.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        content = { content() }
+    )
 }
