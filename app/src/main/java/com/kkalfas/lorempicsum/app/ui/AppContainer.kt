@@ -1,4 +1,4 @@
-package com.kkalfas.lorempicsum
+package com.kkalfas.lorempicsum.app.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
