@@ -3,6 +3,7 @@ object GradleConfig {
     const val KotlinGP = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.Kotlin}"
     const val SafeArgsGP =
         "androidx.navigation:navigation-safe-args-gradle-plugin:${Version.Nav_Safe_Args}"
+    const val KotlinSerialization = "org.jetbrains.kotlin:kotlin-serialization:${Version.Kotlin}"
 
     object QualityDependencies {
         const val ktlint = "com.pinterest:ktlint:${Version.Ktlint}"
