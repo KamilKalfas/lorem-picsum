@@ -2,6 +2,9 @@ package com.kkalfas.lorempicsum.core.domain
 
 import com.kkalfas.lorempicsum.core.LoggerAdapter
 import com.kkalfas.lorempicsum.network.domain.NetworkHandler
+import io.ktor.client.plugins.ClientRequestException
+import io.ktor.client.plugins.ServerResponseException
+import javax.inject.Inject
 
 sealed class LCE<out R> {
 
@@ -17,7 +20,7 @@ sealed class LCE<out R> {
         }
     }
 
-    class Executor constructor(
+    class Executor @Inject constructor(
         val networkHandler: NetworkHandler,
         val loggerAdapter: LoggerAdapter
     ) {
@@ -27,7 +30,8 @@ sealed class LCE<out R> {
                     try {
                         Success(block())
                     } catch (e: Exception) {
-                        loggerAdapter.log("Executor#execute: ${e::class.java.simpleName}")
+                        loggerAdapter.log("Executor#execute: ${e.stackTraceToString()}")
+
                         Error(e.toCustomExceptions())
                     }
                 }
@@ -47,5 +51,7 @@ sealed class Failure {
 }
 
 fun Exception.toCustomExceptions(): Failure = when (this) {
+    is ServerResponseException -> Failure.ServerFailure(this)
+    is ClientRequestException -> Failure.HttpError(this.response.status.value, this)
     else -> Failure.GenericError(this)
 }

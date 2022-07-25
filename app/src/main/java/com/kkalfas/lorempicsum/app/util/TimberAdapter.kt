@@ -12,5 +12,6 @@ object TimberAdapter : LoggerAdapter {
 
     override fun log(message: String) = Timber.tag(TAG).d(message)
     override fun log(exception: Exception) = Timber.tag(TAG).d(exception)
-    override fun log(message: String, throwable: Throwable) = Timber.tag(TAG).d(t = throwable, message = message)
+    override fun log(message: String, throwable: Throwable) =
+        Timber.tag(TAG).d(t = throwable, message = message)
 }
