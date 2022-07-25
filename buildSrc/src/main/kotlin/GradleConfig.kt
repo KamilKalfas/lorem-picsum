@@ -4,6 +4,7 @@ object GradleConfig {
     const val SafeArgsGP =
         "androidx.navigation:navigation-safe-args-gradle-plugin:${Version.Nav_Safe_Args}"
     const val KotlinSerialization = "org.jetbrains.kotlin:kotlin-serialization:${Version.Kotlin}"
+    const val HiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:${Version.Hilt}"
 
     object QualityDependencies {
         const val ktlint = "com.pinterest:ktlint:${Version.Ktlint}"
@@ -16,6 +17,7 @@ object GradleConfig {
         const val Detekt = "1.20.0-RC1"
         const val Ktlint = "0.45.1"
         const val Nav_Safe_Args = "2.5.0-rc02"
+        const val Hilt = "2.42"
     }
 
     object Project {

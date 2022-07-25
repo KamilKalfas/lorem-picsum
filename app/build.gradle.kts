@@ -4,6 +4,8 @@ plugins {
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
+    id("dagger.hilt.android.plugin")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 apply(from = "$rootDir/config/quality.gradle.kts")
@@ -87,7 +89,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-swiperefresh:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-insets-ui:$accompanistVersion")
-
+    implementation("com.google.accompanist:accompanist-placeholder:$accompanistVersion")
     // coil start
     implementation("io.coil-kt:coil-compose:2.1.0")
     // coil end
@@ -113,11 +115,13 @@ dependencies {
     implementation("io.ktor:ktor-client-serialization:$ktorVersion")
     implementation("io.ktor:ktor-client-logging:$ktorVersion")
     implementation("io.ktor:ktor-client-auth:$ktorVersion")
-
     implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
     implementation("io.ktor:ktor-serialization-gson:2.0.0")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
 
+    // Hilt
+    implementation("com.google.dagger:hilt-android:${GradleConfig.Version.Hilt}")
+    kapt("com.google.dagger:hilt-compiler:${GradleConfig.Version.Hilt}")
 
     // third parties start
     implementation("com.jakewharton.timber:timber:5.0.1")
