@@ -24,19 +24,17 @@ sealed class LCE<out R> {
         val networkHandler: NetworkHandler,
         val loggerAdapter: LoggerAdapter
     ) {
+        @SuppressWarnings("TooGenericExceptionCaught")
         inline fun <reified T : Any> execute(block: () -> T): LCE<T> {
-            return when (networkHandler.isNetworkAvailable()) {
-                true -> {
-                    try {
-                        Success(block())
-                    } catch (e: Exception) {
-                        loggerAdapter.log("Executor#execute: ${e.stackTraceToString()}")
-
-                        Error(e.toCustomExceptions())
-                    }
+            return if (networkHandler.isNetworkAvailable()) {
+                val result = try {
+                    Success(block())
+                } catch (e: Exception) {
+                    loggerAdapter.log("Executor#execute: ${e.stackTraceToString()}")
+                    Error(e.toCustomExceptions())
                 }
-                else -> Error(Failure.NetworkConnection)
-            }
+                result
+            } else Error(Failure.NetworkConnection)
         }
     }
 }
