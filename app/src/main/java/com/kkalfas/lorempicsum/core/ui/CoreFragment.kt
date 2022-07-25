@@ -9,11 +9,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
-internal abstract class CoreFragment<T : ViewDataBinding>(@LayoutRes val layoutId: Int) : Fragment() {
+internal abstract class CoreFragment<T : ViewDataBinding>(@LayoutRes val layoutId: Int) :
+    Fragment() {
     private var _binding: T? = null
     internal val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         return binding.root
     }
