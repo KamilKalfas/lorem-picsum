@@ -79,7 +79,7 @@ private fun DiscoverContent(
             Spacer(modifier = Modifier.height(16.dp))
             BrowsAllSection(
                 isLoading = uiState.isLoading,
-                browseAllFeed = uiState.whatsNewFeed,
+                browseAllFeed = uiState.browseAllFeed,
                 onPhotoItemClicked = onPhotoItemClicked
             )
         }

@@ -1,11 +1,24 @@
 package com.kkalfas.lorempicsum.discover.ui
 
 import androidx.lifecycle.ViewModel
-import com.kkalfas.lorempicsum.common.domain.model.Photo
-import com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo
+import androidx.lifecycle.viewModelScope
+import com.kkalfas.lorempicsum.app.util.CoroutineDispatchers
+import com.kkalfas.lorempicsum.core.domain.LCE
+import com.kkalfas.lorempicsum.discover.domain.GetBrowseAllFeedUseCase
+import com.kkalfas.lorempicsum.discover.domain.GetWhatsNewUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.plus
+import javax.inject.Inject
 
-class DiscoverViewModel : ViewModel() {
+@HiltViewModel
+class DiscoverViewModel @Inject constructor(
+    private val dispatchers: CoroutineDispatchers,
+    private val getWhatsNewUseCase: GetWhatsNewUseCase,
+    private val getBrowseAllFeedUseCase: GetBrowseAllFeedUseCase
+) : ViewModel() {
 
     val uiState = MutableStateFlow(
         DiscoveryUiState(
@@ -15,18 +28,42 @@ class DiscoverViewModel : ViewModel() {
     )
 
     fun onGetWhatsNewFeed() {
-        uiState.value = uiState.value.copy(
-            isLoading = false,
-            whatsNewFeed = feed
-        )
+        getWhatsNewUseCase().onEach {
+            when (it) {
+                is LCE.Error -> {
+                    uiState.value = uiState.value.copy(
+                        isLoading = false,
+                        errors = it.failure
+                    )
+                }
+                LCE.Loading -> uiState.value = uiState.value.copy(isLoading = true)
+                is LCE.Success -> {
+                    uiState.value = uiState.value.copy(
+                        isLoading = false,
+                        whatsNewFeed = it.data
+                    )
+                }
+            }
+        }.launchIn(viewModelScope + dispatchers.io)
     }
 
-    private val feed = IntRange(0, 19).map { i ->
-        PhotoCardInfo(
-            photo = Photo("https://picsum.photos/id/${i + 10}"),
-            avatarUrl = "https://i.pravatar.cc/150?u=$i",
-            name = "First Lastname",
-            username = "@username"
-        )
+    fun onGetBrowseAllFeed() {
+        getBrowseAllFeedUseCase().onEach {
+            when (it) {
+                is LCE.Error -> {
+                    uiState.value = uiState.value.copy(
+                        isLoading = false,
+                        errors = it.failure
+                    )
+                }
+                LCE.Loading -> uiState.value = uiState.value.copy(isLoading = true)
+                is LCE.Success -> {
+                    uiState.value = uiState.value.copy(
+                        isLoading = false,
+                        browseAllFeed = it.data
+                    )
+                }
+            }
+        }.launchIn(viewModelScope + dispatchers.io)
     }
 }

@@ -17,7 +17,11 @@ import dagger.hilt.android.AndroidEntryPoint
 internal class DiscoverFragment : Fragment() {
     private val viewModel by viewModels<DiscoverViewModel>()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.discover_fragment, container, false).apply {
             findViewById<ComposeView>(R.id.discover_compose_view).setContent {
                 DiscoverScreen(
@@ -28,6 +32,7 @@ internal class DiscoverFragment : Fragment() {
                 )
                 LaunchedEffect(Unit) {
                     viewModel.onGetWhatsNewFeed()
+                    viewModel.onGetBrowseAllFeed()
                 }
             }
         }
