@@ -11,11 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.SubcomposeAsyncImage
 import coil.compose.rememberImagePainter
 import coil.size.Scale
 import coil.transform.CircleCropTransformation
 import com.kkalfas.lorempicsum.common.domain.model.Photo
 import com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo
+import com.kkalfas.lorempicsum.common.ui.components.ShowLoadingSpinner
 import com.kkalfas.lorempicsum.theme.ui.Theme
 
 private const val photoCardSize = 343
@@ -35,15 +37,13 @@ fun PhotoCard(
                 .wrapContentSize()
                 .padding(16.dp)
         ) {
-            Image(
+            SubcomposeAsyncImage(
                 modifier = Modifier.size(photoCardSize.dp),
                 contentScale = ContentScale.FillHeight,
-                painter = rememberImagePainter(
-                    data = cardInfo.photo.urlSize(photoCardSize),
-                    builder = {
-                        crossfade(true)
-                    },
-                ),
+                model = cardInfo.photo.urlSize(photoCardSize),
+                loading = {
+                    ShowLoadingSpinner()
+                },
                 contentDescription = null
             )
             Spacer(Modifier.height(16.dp))
