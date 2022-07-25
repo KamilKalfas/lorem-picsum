@@ -28,7 +28,6 @@ object AppModule {
     @Provides
     fun provideLogger(): LoggerAdapter = TimberAdapter
 
-
     @Singleton
     @Provides
     fun provideExecutor(
