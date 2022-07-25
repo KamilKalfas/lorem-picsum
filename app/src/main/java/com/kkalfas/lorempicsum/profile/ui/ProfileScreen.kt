@@ -87,7 +87,9 @@ private fun Toolbar(
     onMessageButtonClick: () -> Unit
 ) {
     Column(
-        modifier = modifier.fillMaxWidth().statusBarsPadding(),
+        modifier = modifier
+            .fillMaxWidth()
+            .statusBarsPadding(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         if (isLoading) Unit // TODO add loading

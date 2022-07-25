@@ -2,7 +2,6 @@ package com.kkalfas.lorempicsum.discover.ui
 
 import android.app.Activity
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -20,10 +19,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil.compose.rememberImagePainter
+import coil.compose.SubcomposeAsyncImage
 import com.kkalfas.lorempicsum.R
 import com.kkalfas.lorempicsum.common.domain.model.Photo
 import com.kkalfas.lorempicsum.common.domain.model.PhotoCardInfo
+import com.kkalfas.lorempicsum.common.ui.components.ShowLoadingSpinner
 import com.kkalfas.lorempicsum.theme.ui.Theme
 import com.kkalfas.lorempicsum.ui.components.CollapsingToolbar
 import com.kkalfas.lorempicsum.ui.components.HorizontalSection
@@ -79,7 +79,7 @@ private fun DiscoverContent(
             Spacer(modifier = Modifier.height(16.dp))
             BrowsAllSection(
                 isLoading = uiState.isLoading,
-                browseAllFeed = uiState.whatsNewFeed,
+                browseAllFeed = uiState.browseAllFeed,
                 onPhotoItemClicked = onPhotoItemClicked
             )
         }
@@ -138,18 +138,17 @@ private fun BrowsAllSection(
                     { _, _ ->
                         val width = 167
                         val height = 310
-                        Image(
+                        SubcomposeAsyncImage(
                             modifier = Modifier
+                                .background(Theme.colors.uiBorder)
                                 .width(width.dp)
                                 .height(height.dp)
                                 .clickable { onPhotoItemClicked(card) },
                             contentScale = ContentScale.FillHeight,
-                            painter = rememberImagePainter(
-                                data = card.photo.urlWidthHeight(width, height),
-                                builder = {
-                                    crossfade(true)
-                                },
-                            ),
+                            model = card.photo.urlWidthHeight(width, height),
+                            loading = {
+                                ShowLoadingSpinner()
+                            },
                             contentDescription = null
                         )
                     }

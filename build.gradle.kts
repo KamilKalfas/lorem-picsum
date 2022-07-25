@@ -11,6 +11,8 @@ buildscript {
         classpath(GradleConfig.AndroidGP)
         classpath(GradleConfig.KotlinGP)
         classpath(GradleConfig.SafeArgsGP)
+        classpath(GradleConfig.KotlinSerialization)
+        classpath(GradleConfig.HiltPlugin)
     }
 }
 
