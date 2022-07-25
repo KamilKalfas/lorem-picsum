@@ -1,4 +1,4 @@
-package com.kkalfas.lorempicsum.photo
+package com.kkalfas.lorempicsum.photo.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/photoFragment"
-        android:name="com.kkalfas.lorempicsum.photo.PhotoFragment"
+        android:name="com.kkalfas.lorempicsum.photo.ui.PhotoFragment"
         tools:layout="@layout/photo_fragment"
         android:label="PhotoFragment" >
         <argument
